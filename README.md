@@ -1,3 +1,7 @@
+
+git clone https://manav0344.github.io/JS-Notes/
+
+
 # Notes App
 
 A **fully responsive web-based Notes App** built using **HTML, CSS, and JavaScript**. This application allows users to efficiently **add, view, search, and delete notes**, with support for multiple notes and sub-notes. The app is designed to be user-friendly and works seamlessly across **desktop, tablet, and mobile devices**.
