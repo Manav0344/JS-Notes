@@ -46,4 +46,4 @@ A **fully responsive web-based Notes App** built using **HTML, CSS, and JavaScri
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/notes-app.git
+git clone https://manav0344.github.io/JS-Notes/
