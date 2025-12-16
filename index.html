@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Elegant Notes</title>
+<link rel="stylesheet" href="./index.css" />
+<link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+
+
+<main class="container">
+<h1>Elegant Notes</h1>
+<p class="subtitle">Store your thoughts and ideas in style</p>
+
+
+<div class="toolbar">
+<input type="text" placeholder="Search notes..." />
+<select id="filterNotes">
+  <option value="All">All notes</option>
+  <option value="Work">Work</option>
+  <option value="Personal">Personal</option>
+  <option value="Ideas">Ideas</option>
+  <option value="Reminder">Reminder</option>
+</select>
+<button class="add-btn" id="openModal">+ Add</button>
+</div>
+
+
+<section class="notes-grid" id="notesGrid"></section>
+</main>
+
+
+<!-- Modal -->
+<div class="modal" id="noteModal">
+<div class="modal-box">
+<div class="modal-header">
+<h3>New Note</h3>
+<span class="close" id="closeModal">×</span>
+</div>
+
+
+<label>Title</label>
+<input type="text" id="noteTitle" />
+
+
+<label>Content</label>
+<textarea id="noteContent"></textarea>
+
+
+<label>Tags</label>
+<div class="tags">
+<button data-tag="Work">💼 Work</button>
+<button data-tag="Personal">👤 Personal</button>
+<button data-tag="Ideas">💡 Ideas</button>
+<button data-tag="Reminder">🔔 Reminder</button>
+</div>
+
+
+<button class="save-btn" id="saveNote">Save Note</button>
+</div>
+</div>
+
+
+<script src="./App.js"></script>
+</body>
+</html>
