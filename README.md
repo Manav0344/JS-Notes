@@ -1,5 +1,5 @@
 
-git clone https://manav0344.github.io/JS-Notes/
+ https://manav0344.github.io/JS-Notes/
 
 
 # Notes App
