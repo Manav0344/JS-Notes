@@ -1,66 +1,92 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Elegant Notes</title>
-<link rel="stylesheet" href="./index.css" />
-<link rel="stylesheet" href="./styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elegant Notes</title>
+
+  <link rel="stylesheet" href="./index.css" />
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
 
-
 <main class="container">
-<h1>Elegant Notes</h1>
-<p class="subtitle">Store your thoughts and ideas in style</p>
+  <h1>Elegant Notes</h1>
+  <p class="subtitle">Store your thoughts and ideas in style</p>
 
+  <!-- TOOLBAR -->
+  <div class="toolbar">
+    <input type="text" placeholder="Search notes..." />
+    <select id="filterNotes">
+      <option value="All">All notes</option>
+      <option value="Work">Work</option>
+      <option value="Personal">Personal</option>
+      <option value="Ideas">Ideas</option>
+      <option value="Reminder">Reminder</option>
+    </select>
+    <button class="add-btn" id="openModal">+ Add</button>
+  </div>
 
-<div class="toolbar">
-<input type="text" placeholder="Search notes..." />
-<select id="filterNotes">
-  <option value="All">All notes</option>
-  <option value="Work">Work</option>
-  <option value="Personal">Personal</option>
-  <option value="Ideas">Ideas</option>
-  <option value="Reminder">Reminder</option>
-</select>
-<button class="add-btn" id="openModal">+ Add</button>
-</div>
+  <!-- FOLDERS -->
+  <h2 style="text-align:left;margin-top:30px;">Recent Folder</h2>
 
+  <section class="folder-grid" id="folderGrid">
+    <div class="folder-card add-folder" id="openFolderModal">
+      <div class="folder-icon">📁+</div>
+      <p>New Folder</p>
+    </div>
+  </section>
 
-<section class="notes-grid" id="notesGrid"></section>
+  <!-- NOTES -->
+  <section class="notes-grid" id="notesGrid"></section>
 </main>
 
-
-<!-- Modal -->
+<!-- NOTE MODAL -->
 <div class="modal" id="noteModal">
-<div class="modal-box">
-<div class="modal-header">
-<h3>New Note</h3>
-<span class="close" id="closeModal">×</span>
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3>New Note</h3>
+      <span class="close" id="closeModal">×</span>
+    </div>
+
+    <label>Title</label>
+    <input type="text" id="noteTitle" />
+
+    <label>Content</label>
+    <textarea id="noteContent"></textarea>
+
+    <label>Tags</label>
+    <div class="tags">
+      <button data-tag="Work">💼 Work</button>
+      <button data-tag="Personal">👤 Personal</button>
+      <button data-tag="Ideas">💡 Ideas</button>
+      <button data-tag="Reminder">🔔 Reminder</button>
+    </div>
+
+    <button class="save-btn" id="saveNote">Save Note</button>
+  </div>
 </div>
 
+<!-- CREATE FOLDER MODAL -->
+<div class="modal" id="folderModal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3>Create Folder</h3>
+      <span class="close" id="closeFolderModal">×</span>
+    </div>
 
-<label>Title</label>
-<input type="text" id="noteTitle" />
+    <input
+      type="text"
+      id="folderNameInput"
+      placeholder="Folder name"
+    />
 
-
-<label>Content</label>
-<textarea id="noteContent"></textarea>
-
-
-<label>Tags</label>
-<div class="tags">
-<button data-tag="Work">💼 Work</button>
-<button data-tag="Personal">👤 Personal</button>
-<button data-tag="Ideas">💡 Ideas</button>
-<button data-tag="Reminder">🔔 Reminder</button>
+    <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:20px;">
+      <button class="add-btn" id="cancelFolder">Cancel</button>
+      <button class="save-btn" id="createFolder">Create</button>
+    </div>
+  </div>
 </div>
-
-
-<button class="save-btn" id="saveNote">Save Note</button>
-</div>
-</div>
-
 
 <script src="./App.js"></script>
 </body>
